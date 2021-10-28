@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar actividad</title>
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <!-- Font Scheherazade -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!--nuestro css-->
+  <link rel="stylesheet" href="/static/css/style4.css">
+</head>
+
+
+<!--video src="/static/Vallenato.mpeg" controls width="200" height="20"></video>-->
+<body>
+  <div class="container">
+    <nav class="nav-main">
+      <img src="{{ url_for('static', filename='/img/notas.png') }}" alt="TechNews logo" class="nav-brand">
+      <ul class="nav-menu">
+        <li>
+          <a href="/dashboard">Inicio</a>
+        </li>
+        <!--<li>
+          <a href="/">Crear actividad</a>
+        </li>-->
+      </ul>
+      <ul class="nav-menu-right">
+        <!-- Aqui vamos a crear el icono-->
+        <li>
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+          <!--<a href="#">
+              <i class="fas fa-users"></i> para mas tarde
+            </a>-->
+        </li>
+      </ul>
+    </nav>
+    <hr>
+  </div>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <h1>
+      {{ data.0 }}
+    </h1>
+    <button type="button" class="btn btn-primary">Left</button>
+    <button type="button" class="btn btn-primary">Middle</button>
+    <button type="button" class="btn btn-primary">Right</button><br>
+    <textarea name="Descripcion" id="Descripcion" cols="44" rows="10" placeholder="Describe la Actividad"></textarea>
+    <br>
+    <label for="fecha">fecha de entrega</label>
+    <input type="date" value="{{data.1}}" disabled><br>
+    <label for="subir">Adjuntar Archivo</label>
+    <input type="file" name="Upload_F">
+
+    
+  </div>
+  <div>
+    <p>Aqui me encuentro</p>
+    {% if data.2==" " %}
+    <img src="{{ url_for('static', filename='img/' + data.4) }}" alt="">
+    {% else %}
+    <video src="/static{{ (data.2) }}" controls></video>
+    {% endif %}
+  </div>
+</body>
+
+</html>

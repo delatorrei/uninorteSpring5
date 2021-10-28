@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/home.css') }}">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <title>Universidad Tecnologica de Bolivar</title>
+</head>
+<body>
+    <header class="header contenedor">
+       <img src="/static/img/utb-logotipo.png" class="logo">
+        </header>
+         <div class="navegacion">
+            <nav class="contenedor">
+                <a href="#">Inscripciones</a>
+                <a href="/ingreso">Ingreso</a>
+            </nav>
+        </div>
+        <div class="enlace"> 
+            {% if sesion_iniciada %}
+            <p>bienvenido</p> 
+            <h1>Salir de Seccion</h1>
+            <form action="/salir" method="POST">
+               {{csrf_token }}
+    
+              <input type="submit" value="Salir" name="" id="">
+           {% else %}
+              <h2>Bienvenido a tu Alma Máter</h2>
+            {% endif %}
+         </div>
+        
+        <div class="slider contenedor">
+            <img src="/static/img/image-background-lautb.jpg">
+        </div>
+
+        <main class="contenedor contenido-principal">
+
+            
+
+                <h1 class="titulo">Mision</h1>
+
+                <div class="entrada">
+                        <p>Somos una institución de educación superior donde la comunidad académica desarrolla, mediante la formación integral, un
+                        proyecto educativo científico, flexible y de calidad que contribuye a la transformación de nuestro entorno social,
+                        económico, empresarial, cultural y ambiental</p><br>
+                        <h1 class="titulo2">Vision</h1>
+                        <p>Ser la universidad que logra atraer y retener estudiantes, profesores y socios estratégicos caracterizada por su oferta
+                        de excelencia académica, formativa, investigativa y de extensión pertinente, contributiva y sostenible convirtiéndose en
+                        Colombia en ejemplo a replicar por pensar globalmente y actuar localmente.</p>
+                        
+                </div>
+
+                <div class="informacion">
+                        <p>Historia</p>
+                        <p>Noticias</p>
+                        <p>Directorio de Servicios</p>
+                    </div>
+                    <div class="imagen1">
+                        <img src="/static/img/2-utb.jpg">
+                    </div>
+        
+                    <div class="imagen2">
+                        <img src="/static/img/1-utb.jpg">
+                    </div>
+                </div>
+               
+
+            </main>
+
+            <footer class="footer">
+                <div class="contenedor">
+                        <div class="widget">
+                            <h3>Estudiantes</h3>
+                            <nav class="menu">
+                                <a href="#">Sed neque sapien</a>
+                                <a href="#">Nulla facilisi</a>
+                                <a href="#"> Orci varius</a>
+                            </nav>
+                        </div>
+                        <div class="widget">
+                            <h3>Servicios</h3>
+                            <nav class="menu">
+                                <a href="#">Sed neque sapien</a>
+                                <a href="#">Nulla facilisi</a>
+                                <a href="#"> Orci varius</a>
+                            </nav>
+                        </div>
+                        <div class="widget">
+                            <h3>Matriculas</h3>
+                            <nav class="menu">
+                                <a href="#">Sed neque sapien</a>
+                                <a href="#">Nulla facilisi</a>
+                                <a href="#"> Orci varius</a>
+                            </nav>
+                        </div>
+                        <div class="widget">
+                            <h3>Contactanos</h3>
+                            <nav class="menu">
+                                <a href="#">Sed neque sapien</a>
+                                <a href="#">Nulla facilisi</a>
+                                <a href="#"> Orci varius</a>
+                            </nav>
+                        </div>
+                </div>
+
+                <p class="copyright">Mintic Grupo-32-Equipo-8 </p>
+            </footer>
+    
+</body>
+</html>

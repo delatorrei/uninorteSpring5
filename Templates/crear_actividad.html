@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <!-- Font Scheherazade -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!--nuestro css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style5.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="nav-main">
+      <img src="{{ url_for('static', filename='img/notas.png') }}" alt="TechNews logo" class="nav-brand">
+      
+      <ul class="nav-menu">
+        <li>
+          <a href="/dashboard">Inicio</a>
+        </li>
+        <li>
+          <a href="#">Detalles de actividad</a>
+        </li>
+      </ul>
+      <ul class="nav-menu-right">
+        <!-- Aqui vamos a crear el icono-->
+        <li>
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+          <!--<a href="#">
+              <i class="fas fa-users"></i> para mas tarde
+            </a>-->
+        </li>
+      </ul>
+    </nav>
+    <hr>
+  </div>
+  <section class="add-activity">
+    <div > 
+      <a href="#" class="agregar"><i class="fas fa-plus"></i>Agregar actividad</a>
+    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+    <label for="Nombre de la Actividad">Nombre de la Actividad: </label>
+    <input type="text" placeholder="Escriba el Nombre de la actividad" class="Control" name="Nombre_de_la_Actividad"><br>
+    <label for="fecha de inicio">Fecha de inicio: </label><br>
+    <input type="date" class="calendario" name="fecha_de_inicio" id="fecha de inicio"><br>
+    <label for="fecha de Entrega">Fecha de Entrega: </label><br>
+    <input type="date" class="calendario" name="fecha_de_Entrega" id="fechade Entrega" ><br>
+    <label for="Descripcion">Descripcion: </label><br>
+    <textarea name="Descripcion" id="Descripcion" cols="44" rows="10" placeholder="Describe la Actividad"></textarea><br>
+    <input type="file" name=file multiple><a href="#"><i class="fas fa-paperclip"></i></a><br><!--Subir archivo-->
+    <input type="submit" value="submit" class="boton">
+    </form>
+  </section>
+</body>
+
+</html>

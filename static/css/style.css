@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+.form-register{
+  width: 400px;
+  padding: 30px;
+  margin-top: 100px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  box-shadow: 7px 13px 37px #000;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-register h2 {
+  font-size: 30px;
+  text-align: center;
+  color: #1B7546;
+  font-family: "calibri";
+}
+.control{
+  width: 100%;
+  padding:6px;
+  border-radius: 4px;
+  border: 1px solid #1f1f1f;
+  font-family: "calibri";
+  font-size: 18px;
+}
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+.form-register a :hover{
+  color: #1B7546;
+  text-decoration: underline;
+}
+.form-register p .check{
+   margin-left: -70px; 
+  }
+.form-register .boton {
+  width: 100%;
+  background-color: rgb(7, 9, 82);
+  border-radius: 4px;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+} 
+
+.form-register .boton {
+  /* text-decoration: underline; */
+  color: #fff;
+}
+
+

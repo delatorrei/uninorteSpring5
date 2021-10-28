@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Inicio de Sesion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  console.log('->',$('[name=error]').val());
+  if($('[name=error]').val() != "0")
+  {
+    alert('falla en login!');
+  }
+});
+</script>
+<body>
+  <header>
+  </header>
+  <div class="container">
+  <section>
+    <form action="/login" class="form-register" method="post">
+      <h2>Bienvenido</h2>
+      <input type="hidden" name='error' value={{error}}>
+      <label for="correo">Usuario: </label><br>
+      <input type="email" placeholder="Usuario" name="Usuario" id="Usuario" class="control">
+      <br>
+      <label for="contrasena">Contrasena: </label><br>
+      <input type="password" placeholder="Escribir contrasena" name="contrasena" id="contrasena" class="control">
+      <!--<img src="img/ojo.jpg" alt="" width="35">-->
+      <br>
+
+      <p><a class="cuenta" href="#"> ¿Olvidaste tu contrasena?</a></p>
+      <input type="submit" value="Iniciar Sesion" class="boton"><br>
+      <P> ¿Es la primera ver usando la plataforma?</P>
+      <p><a class="cuenta" href="/registro">Registrate</a></p>
+    </form>
+  </section>
+</div>
+</body>
+
+</html>

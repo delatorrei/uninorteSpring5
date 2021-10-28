@@ -1,0 +1,63 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <!-- Font Scheherazade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--nuestro css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style4.css') }}">
+  </head>
+
+  <body>
+    <div class="container">+
+      <nav class="nav-main">
+        <img src="/static/img/images/notas.png" alt="TechNews logo" class="nav-brand">
+        <ul class="nav-menu">
+          <li>
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#">Detalles de actividad</a>
+          </li>
+          <li>
+            <a href="/Crear_actividad">Crear actividad</a>
+          </li>
+        </ul>
+        <ul class="nav-menu-right">
+          <!-- Aqui vamos a crear el icono-->
+          <li>
+            <a href="#">
+              <i class="fas fa-search"></i>
+            </a>
+            <!--<a href="#">
+                <i class="fas fa-users"></i> para mas tarde
+              </a>-->
+            <a href="/">desloguearse</a>
+          </li>
+        </ul>
+      </nav>
+      <hr>
+    </div>
+    <section class="container2">
+    <div class="new-card">
+      {% for item in pendientes %}  
+      <div>
+        <img src="{{ url_for('static', filename='/img/'+item.3) }}" alt="">
+        <h1>actividad {{item.1 }}</h1>
+        <p>{{ item.2}}</p>
+        <a href="/actividades/Detalles/{{ item.0}}">Ver mas...</i></a>
+      </div>
+      {% endfor %}
+      
+      </div>
+    </div>
+    </section>
+  </body>
+
+  </html>
